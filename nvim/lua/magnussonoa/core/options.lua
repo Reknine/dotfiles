@@ -34,16 +34,19 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 -- clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
-vim.g.clipboard = {
-	copy = {
-		["+"] = "tmux load-buffer -",
-		["*"] = "tmux load-buffer -",
-	},
-	paste = {
-		["+"] = "tmux save-buffer -",
-		["*"] = "tmux save-buffer -",
-	},
-}
+-- Fix for yanking to windows
+-- vim.g.clipboard = {
+-- 	name = "WslClipboard",
+-- 	copy = {
+-- 		["+"] = "clip.exe",
+-- 		["*"] = "clip.exe",
+-- 	},
+-- 	paste = {
+-- 		["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+-- 		["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+-- 	},
+-- 	cache_enabled = 0,
+-- }
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
