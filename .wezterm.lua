@@ -14,12 +14,26 @@ config.keys = {
 }
 
 
-config.window_background_image = "C:\\users\\magnussonoa\\images\\berzerk.png"
+config.color_scheme = 'rose-pine'
+config.colors = {
+	background = '#14161b'
+}
+
+
+-- config.window_background_image = "C:\\users\\magnussonoa\\images\\quake_ultra.jpg"
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			File = wezterm.config_dir .. "/images/quake_ultra.jpg"
+-- 		},
+-- 		height = "Cover"
+-- 	}
+-- }
 
 config.default_domain = "WSL:Ubuntu"
 
-config.font = wezterm.font("JetBrainsMono Nerd Font", { italic = false})
-config.font_size = 9.5
+config.font = wezterm.font("Iosevka Nerd Font", { weight = 'Medium', italic = false})
+config.font_size = 11
 
 config.enable_tab_bar = false
 

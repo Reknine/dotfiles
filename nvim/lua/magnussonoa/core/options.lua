@@ -1,6 +1,6 @@
-local opt = vim.opt -- for conciseness
+local opt = vim.opt
 
-opt.guicursor = ""
+opt.guicursor = "" -- fat cursor!!
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
@@ -23,11 +23,9 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 -- cursor line
 opt.cursorline = false -- highlight the current cursor line
 
--- appearance
-
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
-opt.termguicolors = true
+opt.termguicolors = true -- good colors, duh
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
@@ -37,20 +35,6 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 -- clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
--- Fix for yanking to windows
--- vim.g.clipboard = {
--- 	name = "WslClipboard",
--- 	copy = {
--- 		["+"] = "clip.exe",
--- 		["*"] = "clip.exe",
--- 	},
--- 	paste = {
--- 		["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
--- 		["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
--- 	},
--- 	cache_enabled = 0,
--- }
-
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
@@ -58,13 +42,14 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
+vim.g.python3_host_prog = "/usr/bin/python3.12"
+
 opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 
-opt.scrolloff = 8
+opt.scrolloff = 10
 opt.colorcolumn = "80"
-
